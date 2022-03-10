@@ -119,6 +119,7 @@ body section.first {
 @media (max-width: 850px) {
     body section.first {
         height: calc(115vh - 100px);
+        background-attachment: scroll;
     }
 }
 body section.first .container {
