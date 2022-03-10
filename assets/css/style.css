@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+header {
+    width: 100vw;
+    height: 100px;
+    background: #545454;
+    display: flex;
+    justify-content: center;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+header nav button {
+    display: none;
+    padding: 15px;
+    background: transparent;
+    border: 0;
+}
+header nav button i {
+    font-size: 35px;
+    color: white;
+}
+header nav button i:hover {
+    opacity: 0.7;
+}
+header nav ul li {
+    list-style: none;
+    margin-right: 10px;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 40px 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+header nav ul li a:hover,
+header nav ul li.active a {    
+    border-bottom: 4px solid #fff; 
+    padding: 42px 10px;
+    margin-bottom: 8px;
+}
+header nav ul li.disable a {
+    opacity: 0.7;
+    cursor: default;    
+    border-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+/* Responsividade */
+@media (max-width: 850px) {
+    header nav ul.flex {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        right: 0%;
+        top: 11.9%;
+        background: #545454;
+        width: 375px;
+        padding: 10px 0 10px 10px;
+    }
+    header nav ul li a {
+        color: #fff;        
+        padding: 20px 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    header nav ul li a:hover,
+    header nav ul li.active a {      
+        padding: 20px 10px;
+    }
+    header nav ul li.disable a {
+        opacity: 0.7;
+        cursor: default;    
+        border-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    header nav button {
+        display: block;
+    }
+}
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body section.first {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("../media/bg-1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+} 
+/* Responsivo */
+@media (max-width: 1275px) {
+    body section.first {
+        margin-top: 0px;
+    }
+}
+@media (max-width: 850px) {
+    body section.first {
+        height: calc(115vh - 100px);
+    }
+}
+body section.first .container {
+    width: 80%;
+    height: inherit;
+    flex-wrap: wrap;
+}
+body section.first .container .card {
+    width: 300px;
+    height: 200px; /* Alterar */
+    box-shadow: 0 0 45px rgba(0, 0, 0, .6);
+    margin: 0px 20px;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: .25em;
+    background: rgb(1,1,1);
+    background: linear-gradient(30deg, rgba(1,1,1,1) 0%, rgba(209,209,209,1) 76%, rgba(255,255,255,1) 100%);
+    cursor: pointer;  
+    overflow: hidden;
+
+    transition: height 500ms ease-in-out;
+}
+body section.first .container .card .profileImg {
+    width: 270px;
+    height: auto;
+}
+body section.first .container .card .profileImg,
+body section.first .container .card .textInfo {
+    width: 90%;
+    height: auto;
+}
+body section.first .container .card .profileImg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    width: 0px;
+    height: 3px;
+    background: rgb(1,1,1);
+    background: linear-gradient(30deg, transparent 0%, rgba(255,255,255,1) 100%);
+
+    transition: width 500ms ease-in;
+}
+body section.first .container .card .profileImg img { 
+    width: 270px;
+    height: 170px;
+    border-radius: .1em;
+    object-fit: cover;
+}
+body section.first .container .card .textInfo {
+    margin-top: -30px;
+    color: white;
+    display: block;
+    opacity: 0;
+    height: 0;
+
+    transform-origin: bottom;
+    transition: opacity 500ms ease-in;
+    transition: height 500ms ease-in;
+}
+/* Animation */
+body section.first .container .card:hover,
+body section.first .container .card.active {
+    height: 400px;
+}
+body section.first .container .card:hover .textInfo,
+body section.first .container .card.active .textInfo {
+    opacity: 1;
+    height: 140px;
+}
+body section.first .container .card:hover .profileImg::after,
+body section.first .container .card.active .profileImg::after {
+    width: 170px;
+}
+
+body section.first .container .card .textInfo h3, 
+body section.first .container .card .textInfo h4 {
+    text-align: center;
+}
+body section.first .container .card .textInfo h3 {
+    font-weight: 700;
+}
+body section.first .container .card .textInfo h4 {
+    opacity: .7;
+}
+body section.first .container .card .textInfo p {
+    margin-top: 10px;
+    font-size: 15px;
+    text-indent: 10px;
+    opacity: .97;
+}
+
+/* ----------------------
+    Segunda Section
+----------------- */
+body section.text {
+    width: 100vw;
+    height: auto;
+    padding: 20px 0px;
+    background: linear-gradient(to bottom, transparent, #d9d9d9);
+}
+body section.text .text-area {
+    width: 80%;
+    margin: 20px auto;
+}
+body section.text .text-area h3,
+body section.text .text-area h4 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+body section.text .text-area h3 {
+    font-size: 40px;
+}
+body section.text .text-area h4 {
+    font-size: 28px;
+    opacity: .6;
+}
+body section.text .text-area p {
+    margin-top: 15px;
+    text-indent: 20px;
+    font-size: 18px;
+}
