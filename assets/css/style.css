@@ -166,8 +166,8 @@ body section.first .container .card .profileImg::after {
 body section.first .container .card .profileImg img { 
     width: 270px;
     height: 170px;
-    border-radius: .1em;
-    object-fit: cover;
+        border-radius: .1em;
+        object-fit: cover;
 }
 body section.first .container .card .textInfo {
     margin-top: -30px;
